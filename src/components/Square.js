@@ -16,28 +16,17 @@ export default class Square extends Component {
   // 3. state는 변경 가능(mutable
   // 4. state가 변하면 re-render 된다.
 
-  // state 생성
-  constructor(props) {
-    console.log(props)
-    super(props);
-    this.state = {
-      value : props.value, 
-    }
-  }
-
   render() {
     return (
-      <button 
-        className='square' 
-        // state 변경
-        onClick={()=> {
-          console.log('전 : ' , this.state.value)
-          this.setState({value:'X'})
-        }}>
-          {/* state 이용 */}
-          {console.log('후 : ', this.state.value)}
-          {this.state.value} 
-      </button>
+      // <button 
+      //   className='square' 
+      //   // state 변경
+      //   onClick={()=>{} }>
+      //     {/* state 이용 */}
+      //     {this.props.value} 
+      // </button>
+
+      <button className='square' onClick={ () => {this.props.onClick()}}>{this.props.value}</button>
     )
   }
 }
